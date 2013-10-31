@@ -3,7 +3,7 @@
  */
 package com.vijitha.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * @author Vijitha
@@ -11,7 +11,7 @@ import java.sql.Date;
  */
 public class Book {
 	
-	private String id,title,isbn,author,classNo,rackNo,pubisher,description,keywords,recordType,bibliographicLevel,headingIdentifier,typeofMaterial;
+	private String id,title,isbn,author,classNo,rackNo,publisher,description,keywords,recordType,bibliographicLevel,headingIdentifier,typeofMaterial;
 	private int noofBooks,edition;
 	private Date dateofArrival;
 	/**
@@ -89,14 +89,14 @@ public class Book {
 	/**
 	 * @return the pubisher
 	 */
-	public String getPubisher() {
-		return pubisher;
+	public String getPublisher() {
+		return publisher;
 	}
 	/**
 	 * @param pubisher the pubisher to set
 	 */
-	public void setPubisher(String pubisher) {
-		this.pubisher = pubisher;
+	public void setPublisher(String publisher) {
+		this.publisher = publisher;
 	}
 	/**
 	 * @return the description

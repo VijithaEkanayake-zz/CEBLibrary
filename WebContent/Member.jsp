@@ -1,4 +1,5 @@
-<%@ include file="header.jsp" %>
+<%@ include file="admin/header.jsp" %>
+
 	<div class="container">
 	<div class="content">
 	 <form method="POST" action='MemberController' name="frmAddMember" class="login" style="width:960px;">
@@ -74,24 +75,24 @@
             <% if (action.equalsIgnoreCase("edit")) {%>
             <div class="controls">
             <input
-                type="text" name="doj"  class="login-input" placeholder="Date of enrolled"
+                type="text" name="doj"  class="login-input" placeholder="Date of enrolled" id="doe"
                  readonly="readonly"/>(You Can't Change this)  <br />
             </div>
             <%} else {%>
             <div class="controls">
             <input
-                type="text" name="doj"  class="login-input" placeholder="Date of enrolled"
+                type="text" name="doj"  class="login-input" placeholder="Date of enrolled" id="doe"
                  />  <br /> 
             </div>
             <%}%>
             <div class="controls">
             <input
-                type="text" name="doa"  class="login-input" placeholder="Date of Appointment"
+                type="text" name="doa"  class="login-input" placeholder="Date of Appointment" id="doa"
                  />  <br /> 
             </div>
             <div class="controls">    
             <input
-                type="text" name="dob"  class="login-input" placeholder="Date of Birth"
+                type="text" name="dob"  class="login-input" placeholder="Date of Birth" id="dob"
                  />  <br /> 
                 
             </div>  

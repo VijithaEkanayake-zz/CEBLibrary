@@ -645,3 +645,112 @@ ul.form {
 		text-decoration:none;
 	}
 
+
+/*+++++++++++++++++++++++++++++++++ Styles for Search box +++++++++++++++++++++++++++++*/
+
+
+
+
+.searchnav {
+    background: none repeat scroll 0 0 #232323;
+    display: inline-block;
+    height: 60px;
+    margin-top: 20px;
+    
+}
+.searchnav li {
+    float: left;
+    list-style-type: none;
+    position: relative;
+}
+.searchnav li a {
+    border-left: 1px solid #2E2E2E;
+    color: #FFFFFF;
+    display: block;
+    font-family: Montserrat,sans-serif;
+    font-size: 16px;
+    line-height: 60px;
+    padding: 0 26px;
+    text-decoration: none;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+.searchnav li a:hover {
+    background-color: #2E2E2E;
+}
+.settings a {
+    font-size: 10px;
+    height: 24px;
+    line-height: 24px;
+    padding: 18px;
+}
+.search {
+    margin: 4px;
+    width: 817px;
+}
+.search_text {
+    -moz-box-sizing: border-box;
+    background: none repeat scroll 0 0 #1F7F5C;
+    border: 0 none;
+    color: #FFFFFF;
+    float: left;
+    font-family: Montserrat,sans-serif;
+    font-size: 16px;
+    height: 52px;
+    margin-right: 0;
+    outline: medium none;
+    padding: 15px 0 15px 20px;
+    transition: all 0.15s ease 0s;
+    width: 497px;
+}
+:-moz-placeholder {
+    color: #FFFFFF;
+}
+*::-moz-placeholder {
+    color: #FFFFFF;
+}
+.search_text:focus {
+    background: none repeat scroll 0 0 #409777;
+}
+.search_button {
+    background: url("http://designmodo.com/demo/dropdown-menu-search/search.png") no-repeat scroll center center #1F7F5C;
+    border: 0 none;
+    cursor: pointer;
+    float: left;
+    height: 52px;
+    padding: 0;
+    text-align: center;
+    width: 60px;
+}
+
+.searchnav select{
+    background: none repeat scroll 0 0 #232323;
+    display: inline-block;
+    height: 45px;
+    width: 250px;
+    border-left: 1px solid #2E2E2E;
+    color: #FFFFFF;
+    font-family: Montserrat,sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin: 5px 5px 5px 5px;
+    background-image: url('img/triangle.png');
+    
+}
+
+.searchnav select option{
+    background: none repeat scroll 0 0 #232323;
+    display: block;
+    height: 30px;
+    width: 200px;
+    border-left: 1px solid #2E2E2E;
+    color: #FFFFFF;
+    font-family: Montserrat,sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+    text-align: center;
+    
+}
+

@@ -48,10 +48,10 @@ public class LoginController extends HttpServlet{
 			if(member!=null){
 			if(((member.getPfNo()).equals(submittedPfNo)) && ((member.getUserLevel()).equals("admin"))){
 				HttpSession session=request.getSession(true);
-				session.setAttribute("id", member.getId());
+				session.setAttribute("name", member.getName());
 				session.setAttribute("pfNo", member.getPfNo());
 				request.setAttribute("userLevel", member.getUserLevel());
-				RequestDispatcher view=request.getRequestDispatcher("home.jsp");
+				RequestDispatcher view=request.getRequestDispatcher("admin/home.jsp");
 		    	view.forward(request,response);
 				//response.sendRedirect("home.jsp"); //logged-in page 
 		    	

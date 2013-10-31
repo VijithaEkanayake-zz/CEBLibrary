@@ -1,4 +1,4 @@
-<%@ include file="header.jsp" %>
+<%@ include file="admin/header.jsp" %>
 <div class="content">
 	<table border=1 class="CSSTableGenerator">
         <thead>
