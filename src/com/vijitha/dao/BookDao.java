@@ -22,6 +22,7 @@ public class BookDao {
 	
 	
 	private Connection connection;
+	private String query = null;
 	
 	public BookDao(){
 		try {
@@ -144,12 +145,35 @@ public class BookDao {
 	
 	public List<Book> getSearchedBooks(String name,String criteria){
 		List<Book> books=new ArrayList<>();
-		if(name=="" ){
-			this.getAllBooks();
-		}else if(criteria=="title"){
+		System.out.println("+++++++++++++++++test++++++++++");
+		
+		if(name.equals("") ){
+			System.out.println("+++++++++++++++++test2++++++++++");
+			query="SELECT * FROM book";
+		}else {
+			switch (criteria) {
+			case "title":
+				query="SELECT * FROM book WHERE title LIKE '%"+name+"%' ";
+				break;
+			case "isbn":
+				query="SELECT * FROM book WHERE isbn LIKE '%"+name+"%' ";
+				break;
+			case "author":
+				query="SELECT * FROM book WHERE author LIKE '%"+name+"%' ";
+				break;
+				
+			case "keyword":
+				query="SELECT * FROM book WHERE keyword LIKE '%"+name+"%' ";
+				break;
+
+			default:
+				break;
+			}
+		}
+			System.out.println(query);
 			try {
 				Statement st=connection.createStatement();
-				ResultSet rs=st.executeQuery("SELECT * FROM book WHERE title LIKE '%%' ");
+				ResultSet rs=st.executeQuery(query);
 				
 				while(rs.next()){
 					Book book=new Book();
@@ -176,7 +200,7 @@ public class BookDao {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}
+		
 		
 		return books;
 	}

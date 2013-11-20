@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.vijitha.dao.BookDao;
-import com.vijitha.model.Book;
 
 /**
  * @author Vijitha
@@ -35,12 +34,15 @@ public class SearchController extends HttpServlet{
 	
 	protected void doPost(HttpServletRequest request,HttpServletResponse response){
 		//Book book=new Book();
+		System.out.println("search:::::::::::::");
 		String name=request.getParameter("search_text");
 		String criteria=request.getParameter("criteria");
-		request.setAttribute("results", dao.getSearchedBooks(name, criteria));
+		System.out.println(name+"+++++++++"+criteria);		
+		
 		
 		try {
-			RequestDispatcher view=request.getRequestDispatcher("search.jsp");
+			RequestDispatcher view=request.getRequestDispatcher("/listbooks.jsp");
+			request.setAttribute("books", dao.getSearchedBooks(name, criteria));
 			view.forward(request, response);
 		} catch (ServletException e) {
 			// TODO Auto-generated catch block

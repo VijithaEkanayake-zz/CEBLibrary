@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="CEBLibrabry">
+    <wb-module deploy-name="CEBLibrary">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="CEBLibrabry"/>
-        <property name="java-output-path" value="/CEBLibrabry/build/classes"/>
+        <property name="java-output-path" value="/CEBLibrary/build/classes"/>
+        <property name="context-root" value="CEBLibrary"/>
     </wb-module>
 </project-modules>

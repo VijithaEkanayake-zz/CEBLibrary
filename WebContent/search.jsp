@@ -7,9 +7,9 @@
 		
 	
 	<li class="search">
-		<form action="" method="post">
+		<form action="SearchController" method="post">
 			<input type="text" name="search_text" class="search_text" placeholder="Search"/>
-			<input type="button" name="search_button" class="search_button">
+			<input type="submit" name="search_button" class="search_button">
 			
 			<select name="criteria">
 			<option value="-1">Select a Criteria</option>
