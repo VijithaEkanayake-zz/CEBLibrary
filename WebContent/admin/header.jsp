@@ -7,7 +7,7 @@
 <link rel="shortcut icon" href="img/ceb.ico" />
 <title>Ceylon Electricity Board</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="stylesheet" href="css/style.css" type="text/css" /> 
+<link rel="stylesheet" href="css/style.css" type="text/css" />
  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -20,6 +20,8 @@ $(document).ready(function() {
 	$( "#dob" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
 	$( "#doe" ).datepicker();
 	$( "#doe" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
+	$( "#doi" ).datepicker();
+	$( "#doi" ).datepicker( "option", "dateFormat", "yy-mm-dd" );
 	$('ul.form li a').click(
 		function(e) {
 			//e.preventDefault(); // prevent the default action
@@ -64,8 +66,8 @@ $(function() {
 		<li class=""><a class="messages" href="MemberController?action=insert"><i class="icon-envelope-alt"></i>Add Member</a></li>
 		<li><a class="settings" href="MemberController?action=listmember"><i class="icon-cog"></i>Show All Members</a></li>
 		<li><a class="logout" href="BookController?action=listbooks"><i class="icon-signout"></i>List of Books</a></li>
-		<li><a class="profile" href="#"><i class="icon-user"></i>Issue a Book</a></li>
-		<li><a class="messages" href="#"><i class="icon-user"></i>Book Returns</a></li>
+		<li><a class="profile" href="issuebook.jsp"><i class="icon-user"></i>Issue a Book</a></li>
+		<li><a class="messages" href="returnbook.jsp"><i class="icon-user"></i>Book Returns</a></li>
 		<li><a class="settings" href="search.jsp"><i class="icon-cog"></i>Search</a></li>
 		<li><a class="logout" href="logout.jsp"><i class="icon-signout"></i>Logout</a></li>
 	</ul>
