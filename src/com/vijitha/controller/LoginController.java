@@ -48,6 +48,8 @@ public class LoginController extends HttpServlet{
 			if(member!=null){
 			if(((member.getPfNo()).equals(submittedPfNo)) && ((member.getUserLevel()).equals("admin"))){
 				HttpSession session=request.getSession(true);
+				session.setAttribute( "username", member.getName());
+				session.setAttribute("userLevel", member.getUserLevel());
 				session.setAttribute("name", member.getName());
 				session.setAttribute("pfNo", member.getPfNo());
 				request.setAttribute("userLevel", member.getUserLevel());
@@ -57,6 +59,8 @@ public class LoginController extends HttpServlet{
 		    	
 			}else if(((member.getPfNo()).equals(submittedPfNo)) && ((member.getUserLevel()).equals("member"))){
 				HttpSession session=request.getSession(true);
+				session.setAttribute( "username", member.getName());
+				session.setAttribute("userLevel", member.getUserLevel());
 				session.setAttribute("name", member.getName());
 				request.setAttribute("userLevel", member.getUserLevel());
 				RequestDispatcher view=request.getRequestDispatcher("home.jsp");

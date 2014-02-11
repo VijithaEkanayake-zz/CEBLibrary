@@ -32,6 +32,22 @@
     <servlet-name>BookController</servlet-name>
     <url-pattern>/BookController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>BookIssueController</servlet-name>
+    <servlet-class>com.vijitha.controller.BookIssueController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookIssueController</servlet-name>
+    <url-pattern>/BookIssueController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>BookReturnController</servlet-name>
+    <servlet-class>com.vijitha.controller.BookReturnController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookReturnController</servlet-name>
+    <url-pattern>/BookReturnController</url-pattern>
+  </servlet-mapping>
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>

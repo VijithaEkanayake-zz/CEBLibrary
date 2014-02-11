@@ -66,7 +66,7 @@ $(function() {
 		<li class=""><a class="messages" href="MemberController?action=insert"><i class="icon-envelope-alt"></i>Add Member</a></li>
 		<li><a class="settings" href="MemberController?action=listmember"><i class="icon-cog"></i>Show All Members</a></li>
 		<li><a class="logout" href="BookController?action=listbooks"><i class="icon-signout"></i>List of Books</a></li>
-		<li><a class="profile" href="issuebook.jsp"><i class="icon-user"></i>Issue a Book</a></li>
+		<li><a class="profile" href="BookIssueController?action=insert"><i class="icon-user"></i>Issue a Book</a></li>
 		<li><a class="messages" href="returnbook.jsp"><i class="icon-user"></i>Book Returns</a></li>
 		<li><a class="settings" href="search.jsp"><i class="icon-cog"></i>Search</a></li>
 		<li><a class="logout" href="logout.jsp"><i class="icon-signout"></i>Logout</a></li>

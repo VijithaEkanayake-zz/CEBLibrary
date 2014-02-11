@@ -79,12 +79,45 @@ public class MemberDao {
 	
 	//TODO implement member update function
 	public void updateMember(Member member){
-		
+		try {
+			PreparedStatement ps=connection.prepareStatement("UPDATE member SET member_id=?,pf_no=?,name=?,designation=?,branch=?,off_addr=?,private_addr=?,contact_no=?,email=?,doj=?,doa=?,dob=?,civil_status=?,gender=?,prof_qualifications=?,user_level=?,password=? WHERE member_id=? ");
+			ps.setString(1, member.getId());
+			ps.setString(2, member.getPfNo());
+			ps.setString(3, member.getName());
+			ps.setString(4, member.getDesignation());
+			ps.setString(5, member.getBranch());
+			ps.setString(6, member.getOfficeAddr());
+			ps.setString(7, member.getHomeAddr());
+			ps.setString(8, member.getContactNo());
+			ps.setString(9, member.getEmail());
+			ps.setDate(10, new java.sql.Date(member.getDoj().getTime()));
+			ps.setDate(11,new java.sql.Date(member.getDoa().getTime()));
+			ps.setDate(12,new java.sql.Date(member.getDob().getTime()));
+			ps.setString(13, member.getCivilStatus());
+			ps.setString(14, member.getGender());
+			ps.setString(15, member.getProf_qualification());
+			ps.setString(16, member.getUserLevel());
+			ps.setString(17, member.getPassword());
+			ps.setString(18, member.getId());
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	//TODO
 	public void deleteMember(String id){
-		
+		 try {
+	            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM member where member_id=?");
+	            // Parameters start with 1
+	            preparedStatement.setString(1, id);
+	            preparedStatement.executeUpdate();
+
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
 	}
 	
 	public List<Member> getAllMembers(){
@@ -127,12 +160,28 @@ public class MemberDao {
 		Member member=new Member();
 		
 		try {
-			PreparedStatement ps=connection.prepareStatement("SELECT * FROM member WHERE name = ?");
+			PreparedStatement ps=connection.prepareStatement("SELECT * FROM member WHERE member_id = ?");
 			ps.setString(1, memberId);
 			ResultSet rs=ps.executeQuery();
 			
 			if(rs.next()){
-				//TODO implement set member
+				member.setId(rs.getString("member_id"));
+				member.setPfNo(rs.getString("pf_no"));
+				member.setName(rs.getString("name"));
+				member.setDesignation(rs.getString("designation"));
+				member.setBranch(rs.getString("branch"));
+				member.setOfficeAddr(rs.getString("off_addr"));
+				member.setHomeAddr(rs.getString("private_addr"));
+				member.setContactNo(rs.getString("contact_no"));
+				member.setEmail(rs.getString("email"));
+				member.setDoj(rs.getDate("doj"));
+				member.setDoa(rs.getDate("doa"));
+				member.setDob(rs.getDate("dob"));
+				member.setCivilStatus(rs.getString("civil_status"));
+				member.setGender(rs.getString("gender"));
+				member.setProf_qualification(rs.getString("prof_qualifications"));
+				member.setUserLevel(rs.getString("user_level"));
+				member.setPassword(rs.getString("password"));
 			}
 			
 		} catch (SQLException e) {

@@ -49,7 +49,7 @@ public class BookController extends HttpServlet{
     		request.setAttribute("books", dao.getAllBooks());
     	}else if (action.equalsIgnoreCase("edit")) {
 			forward=INSERT_OR_EDIT;
-			String bookId=request.getParameter("Id");
+			String bookId=request.getParameter("bookId");
 			Book book=dao.getBookById(bookId);
 			request.setAttribute("book", book);
 		}else if (action.equalsIgnoreCase("listBooks")) {

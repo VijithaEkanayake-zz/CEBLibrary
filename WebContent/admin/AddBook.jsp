@@ -9,7 +9,7 @@
             <% if (action.equalsIgnoreCase("edit")) {%>
             <div class="controls">
             Book ID : <input type="text" name="id" class="login-input"
-                         placeholder="Book Id"      /> ${book.id}(You Can't Change this)<br /> 
+                         placeholder="Book Id"   value="<c:out value="${book.id}" />"  readonly="readonly" /> (You Can't Change this)<br /> 
              </div>
             <%} else {%>
             <div class="controls">
@@ -20,36 +20,36 @@
             <div class="controls">
             <input
                 type="text" name="title" class="login-input"
-                placeholder="Book Title" /> <br /> 
+                placeholder="Book Title" value="<c:out value="${book.title}" />" /> <br /> 
             </div>
             <div class="controls">    
             <input
-                placeholder="ISBN" type="text" name="isbn" class="login-input"
+                placeholder="ISBN" type="text" name="isbn" class="login-input" value="<c:out value="${book.isbn}" />"
                  /> <br />    
             </div>
             <div class="controls">
             <input
-                type="text" name="author" class="login-input"
+                type="text" name="author" class="login-input" value="<c:out value="${book.author}" />"
                 placeholder="Author" /> <br />
             </div>
             <div class="controls">    
             <input
-                type="text" name="classno"  class="login-input" placeholder="Class Number"
+                type="text" name="classno"  class="login-input" placeholder="Class Number" value="<c:out value="${book.classNo}" />"
                  /> <br /> 
             </div>
             <div class="controls">   
             <input
-                type="text" name="rackno"  class="login-input" placeholder="Rack Number"
+                type="text" name="rackno"  class="login-input" placeholder="Rack Number" value="<c:out value="${book.rackNo}" />"
                 /> <br />  
            </div>
            <div class="controls">
             <input
-                type="text" name="count"  class="login-input" placeholder="Number of Books"
+                type="text" name="count"  class="login-input" placeholder="Number of Books" value="<c:out value="${book.noofBooks}" />"
                  /> <br /> 
             </div>
             <div class="controls">    
             <input
-                type="text" name="doa"  class="login-input" placeholder="Date of Arrival" id="doa"
+                type="text" name="doa"  class="login-input" placeholder="Date of Arrival" id="doa" value="<c:out value="${book.dateofArrival}" />"
                  /> <br /> 
             </div>
             </div>
@@ -60,12 +60,12 @@
             
             <div class="controls">
             <input
-                type="text" name="publisher"  class="login-input" placeholder="Publisher"
+                type="text" name="publisher"  class="login-input" placeholder="Publisher" value="<c:out value="${book.publisher}" />"
                  /> <br />
             </div>
             <div class="controls">    
             <input
-                type="text" name="edition"  class="login-input" placeholder="Edition"
+                type="text" name="edition"  class="login-input" placeholder="Edition" value="<c:out value="${book.edition}" />"
                  /> <br /> 
             </div>
                 
@@ -74,35 +74,35 @@
             
             <div class="controls">
             <input
-                type="text" name="description"  class="login-input" placeholder="Description"
+                type="text" name="description"  class="login-input" placeholder="Description" value="<c:out value="${book.description}" />"
                  /> <br />
             </div>
             
             <div class="controls">
             <input
-                type="text" name="keywords"  class="login-input" placeholder="Keywords"
+                type="text" name="keywords"  class="login-input" placeholder="Keywords" value="<c:out value="${book.keywords}" />"
                  />  <br /> 
             </div>
             
             <div class="controls">
             <input
-                type="text" name="recordtype"  class="login-input" placeholder="Record Type"
+                type="text" name="recordtype"  class="login-input" placeholder="Record Type" value="<c:out value="${book.recordType}" />"
                  />  <br /> 
             </div>
             <div class="controls">    
             <input
-                type="text" name="blevel"  class="login-input" placeholder="Bibliographic Level"
+                type="text" name="blevel"  class="login-input" placeholder="Bibliographic Level" value="<c:out value="${book.bibliographicLevel}" />"
                  />  <br /> 
                 
             </div>  
             <div class="controls"> 
             <input
-                type="text" name="identifier"  class="login-input" placeholder="Heading Identifier"
+                type="text" name="identifier"  class="login-input" placeholder="Heading Identifier" value="<c:out value="${book.headingIdentifier}" />"
                  /> <br /> 
             </div>
             <div class="controls">
             <input
-                type="text" name="tmaterial"  class="login-input" placeholder="Type of Material"
+                type="text" name="tmaterial"  class="login-input" placeholder="Type of Material" value="<c:out value="${book.typeofMaterial}" />"
                  /> <br /> 
             </div>
             

@@ -63,7 +63,7 @@ $(function() {
          		<ul class="form">
 		<li><a class="profile" href="MemberController?action=listmember"><i class="icon-user"></i>Show All Members</a></li>
 		<li><a class="messages" href="BookController?action=listbooks"><i class="icon-envelope-alt"></i>List of Books</a></li>
-		<li><a class="settings" href="search.jsp"><i class="icon-cog"></i>Search</a></li>
+		<li><a class="settings" href="requestbook.jsp"><i class="icon-cog"></i>Search</a></li>
 		<li><a class="logout" href="logout.jsp"><i class="icon-signout"></i>Logout</a></li>
 	</ul>
          	
