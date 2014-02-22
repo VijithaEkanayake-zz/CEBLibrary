@@ -9,17 +9,25 @@ import java.util.Date;
  * @author vijitha
  *
  */
-public class BookRequest {
-	private int requestId;
+public class Fine {
+	
+	private Date borrowedDate;
+	private Date dateToBeReturn;
 	private String memberId;
 	private String bookId;
-	private Date reqDate;
 	
-	public int getRequestId() {
-		return requestId;
+	
+	public Date getBorrowedDate() {
+		return borrowedDate;
 	}
-	public void setRequestId(int requestId) {
-		this.requestId = requestId;
+	public void setBorrowedDate(Date borrowedDate) {
+		this.borrowedDate = borrowedDate;
+	}
+	public Date getDateToBeReturn() {
+		return dateToBeReturn;
+	}
+	public void setDateToBeReturn(Date dateToBeReturn) {
+		this.dateToBeReturn = dateToBeReturn;
 	}
 	public String getMemberId() {
 		return memberId;
@@ -33,13 +41,5 @@ public class BookRequest {
 	public void setBookId(String bookId) {
 		this.bookId = bookId;
 	}
-	public Date getReqDate() {
-		return reqDate;
-	}
-	public void setReqDate(Date reqDate) {
-		this.reqDate = reqDate;
-	}
-	
-	
 
 }

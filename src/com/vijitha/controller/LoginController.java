@@ -62,6 +62,7 @@ public class LoginController extends HttpServlet{
 				session.setAttribute( "username", member.getName());
 				session.setAttribute("userLevel", member.getUserLevel());
 				session.setAttribute("name", member.getName());
+				session.setAttribute("pfNo", member.getPfNo());
 				request.setAttribute("userLevel", member.getUserLevel());
 				RequestDispatcher view=request.getRequestDispatcher("home.jsp");
 		    	view.forward(request,response);

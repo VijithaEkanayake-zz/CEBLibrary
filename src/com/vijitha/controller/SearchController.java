@@ -41,7 +41,7 @@ public class SearchController extends HttpServlet{
 		
 		
 		try {
-			RequestDispatcher view=request.getRequestDispatcher("/listbooks.jsp");
+			RequestDispatcher view=request.getRequestDispatcher("/searchbookresult.jsp");
 			request.setAttribute("books", dao.getSearchedBooks(name, criteria));
 			view.forward(request, response);
 		} catch (ServletException e) {

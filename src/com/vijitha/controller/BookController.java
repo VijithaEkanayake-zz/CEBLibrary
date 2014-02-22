@@ -29,6 +29,7 @@ public class BookController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private static String INSERT_OR_EDIT = "/admin/AddBook.jsp";
     private static String LIST_BOOK = "/listbooks.jsp";
+    private static String VIEW_BOOK = "/viewbookdetails.jsp";
     
     
     private BookDao dao;
@@ -52,6 +53,13 @@ public class BookController extends HttpServlet{
 			String bookId=request.getParameter("bookId");
 			Book book=dao.getBookById(bookId);
 			request.setAttribute("book", book);
+		}else if (action.equalsIgnoreCase("viewbook")) {
+			forward=VIEW_BOOK;
+			String bookId=request.getParameter("bookId");
+			Book book=dao.getBookById(bookId);
+			int available_copies=dao.getAvailableCopies(book);
+			request.setAttribute("book", book);
+			request.setAttribute("available_copies", available_copies);
 		}else if (action.equalsIgnoreCase("listBooks")) {
 			forward=LIST_BOOK;
 			request.setAttribute("books", dao.getAllBooks());		

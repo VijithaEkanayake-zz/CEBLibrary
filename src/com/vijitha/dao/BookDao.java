@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.vijitha.model.Book;
-import com.vijitha.model.BookIssues;
 import com.vijitha.util.DbConnection;
 
 /**

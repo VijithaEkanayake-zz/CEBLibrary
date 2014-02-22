@@ -48,6 +48,14 @@
     <servlet-name>BookReturnController</servlet-name>
     <url-pattern>/BookReturnController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>BookRequestController</servlet-name>
+    <servlet-class>com.vijitha.controller.BookRequestController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BookRequestController</servlet-name>
+    <url-pattern>/BookRequestController</url-pattern>
+  </servlet-mapping>
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>

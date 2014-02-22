@@ -46,6 +46,22 @@ public class BookIssueDao {
 		}
 	}
 	
+	
+	public void issueRequestedBook(BookIssues bookIssue){
+		try {
+			PreparedStatement ps=connection.prepareStatement("INSERT INTO issues (acc_no,member_id,issued_date,issuedby) VALUES(?,?,?,?);");
+			ps.setString(1, bookIssue.getAccNo());
+			ps.setString(2, bookIssue.getMemberId());
+			ps.setDate(3, new java.sql.Date(bookIssue.getIssuedDate().getTime()));
+			ps.setString(4, bookIssue.getIssuer());
+			ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	//TODO
 		public void removeBookIssue(String id){
 			
