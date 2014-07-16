@@ -9,13 +9,28 @@ public class BookIssues {
 	String accNo;
 	String memberId;
 	Date issuedDate;
+	Date legalReturnDate;
 	String issuer;
+	int fine;
 	
+	public int getFine() {
+		return fine;
+	}
+	public void setFine(int fine) {
+		this.fine = fine;
+	}
 	public int getIssueID() {
 		return issueID;
 	}
 	public void setIssueID(int issueID) {
 		this.issueID = issueID;
+	}
+	
+	public Date getLegalReturnDate() {
+		return legalReturnDate;
+	}
+	public void setLegalReturnDate(Date legalReturnDate) {
+		this.legalReturnDate = legalReturnDate;
 	}
 	public String getAccNo() {
 		return accNo;

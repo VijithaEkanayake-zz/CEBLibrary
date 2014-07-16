@@ -72,7 +72,7 @@ html {
 }
 body {
 	
-	background-color:#FEFCC8;
+	background-color:#FFFFFF;
 	
 }
 
@@ -140,7 +140,7 @@ dt { }
 dd { }
 
 /* Tables */
-
+/*
 table 			{ width:100%; }
 tr				{ }
 .odd 			{ background-color:#eee; }
@@ -158,7 +158,7 @@ tfoot			{ }
 .tfooter		{ background-color:#ccc; text-align:center; font-style:italic; }
 
 caption			{ background:#efefef; }
-
+*/
 /* Containers */
 
 #wrapper {
@@ -182,7 +182,7 @@ caption			{ background:#efefef; }
 #topnav ul li a{
 	padding:10px 20px;
 	float:bottom;
-	color: #DE3724;
+	color: #1E0FBE;
 	font-size:14px;
 	font-weight:bold;
 }
@@ -222,141 +222,6 @@ caption			{ background:#efefef; }
 }
 
 
-
-/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-
-/*
- * Copyright (c) 2013 Thibaut Courouble
- * http://www.cssflow.com
- *
- * Licensed under the MIT License:
- * http://www.opensource.org/licenses/mit-license.php
- *
- * View the Sass/SCSS source at:
- * http://www.cssflow.com/snippets/facebook-login-form/demo/scss
- *
- * Original PSD by Alex Montague: http://goo.gl/lMwBA
- */
-
-@import url(http://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css);
-
-input, textarea, select, label {
-  font-family: inherit;
-  font-size: 12px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.login {
-  margin: 20px auto;
-  padding: 18px 20px;
-  width: 300px;
-  background: #3f65b7;
-  background-clip: padding-box;
-  border: 1px solid #172b4e;
-  border-bottom-color: #142647;
-  border-radius: 5px;
-  background-image: -webkit-radial-gradient(cover, #437dd6, #3960a6);
-  background-image: -moz-radial-gradient(cover, #437dd6, #3960a6);
-  background-image: -o-radial-gradient(cover, #437dd6, #3960a6);
-  background-image: radial-gradient(cover, #437dd6, #3960a6);
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.login h1 {
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  text-align: center;
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.4);
-}
-
-.login-input {
-  display: block;
-  width: 100%;
-  height: 37px;
-  margin-bottom: 20px;
-  padding: 0 9px;
-  color: white;
-  text-shadow: 0 1px black;
-  background: #2b3e5d;
-  border: 1px solid #15243b;
-  border-top-color: #0d1827;
-  border-radius: 4px;
-  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
-  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
-  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2);
-}
-
-.login-input:focus {
-  outline: 0;
-  background-color: #32486d;
-  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 4px 1px rgba(255, 255, 255, 0.6);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 4px 1px rgba(255, 255, 255, 0.6);
-}
-
-.lt-ie9 .login-input { line-height: 35px; }
-
-.login-submit {
-  display: block;
-  width: 100%;
-  height: 37px;
-  margin-bottom: 15px;
-  font-size: 14px;
-  font-weight: bold;
-  color: #294779;
-  text-align: center;
-  text-shadow: 0 1px rgba(255, 255, 255, 0.3);
-  background: #adcbfa;
-  background-clip: padding-box;
-  border: 1px solid #284473;
-  border-bottom-color: #223b66;
-  border-radius: 4px;
-  cursor: pointer;
-  background-image: -webkit-linear-gradient(top, #d0e1fe, #96b8ed);
-  background-image: -moz-linear-gradient(top, #d0e1fe, #96b8ed);
-  background-image: -o-linear-gradient(top, #d0e1fe, #96b8ed);
-  background-image: linear-gradient(to bottom, #d0e1fe, #96b8ed);
-  -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15);
-}
-
-.login-submit:active {
-  background: #a4c2f3;
-  -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4), 0 1px rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.4), 0 1px rgba(255, 255, 255, 0.1);
-}
-
-.login-help {
-  text-align: center;
-}
-
-.login-help > a {
-  font-size: 11px;
-  color: #d4deef;
-  text-decoration: none;
-  text-shadow: 0 -1px rgba(0, 0, 0, 0.4);
-}
-
-.login-help > a:hover {
-  text-decoration: underline;
-}
-
-::-moz-focus-inner {
-  padding: 0;
-  border: 0;
-}
-
-:-moz-placeholder { color: #bcc0c8 !important; }
-::-webkit-input-placeholder { color: #bcc0c8; }
-:-ms-input-placeholder { color: #bcc0c8 !important; }
 
 /* About */
 .about {
@@ -518,14 +383,15 @@ input, textarea, select, label {
 
 
 ul.form {
-		position:relative;
-		background:#fff;
-		width:250px;
-		margin:auto;
-		margin-top:20px;
-		padding:0;
-		list-style: none;
-		overflow:hidden;
+		background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 0;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+    list-style: none outside none;
+    margin: 0 auto auto;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 100%;
 		
 		-webkit-border-radius: 5px;
 		-moz-border-radius: 5px;
@@ -537,18 +403,18 @@ ul.form {
 	}
 
 	.form li a {
-		width:225px;
-		padding-left:20px;
-		height:50px;
-		line-height:50px;
-		display:block;
-		overflow:hidden;
-		position:relative;
-		text-decoration:none;
-		text-transform:uppercase;
-		font-size:14px;
-		color:#686868;
-		
+	color: #000000;
+    display: block;
+    font-size: 14px;
+    height: 45px;
+    line-height: 45px;
+    overflow: hidden;
+    padding-left: 10px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.2s linear 0s;
+    width: 225px;
 		-webkit-transition:all 0.2s linear;
 		-moz-transition:all 0.2s linear;
 		-o-transition:all 0.2s linear;
@@ -621,13 +487,17 @@ ul.form {
 	}
 
 	h1 {
-		color:#fff;
-		margin:0 auto;
-		margin-top:60px;
-		margin-bottom:40px;
-		font-size:30px;
-		width:300px;
-		text-align:center;
+		background: none repeat scroll 0 0 #FFFFFF;
+   border-radius: 0;
+    box-shadow: 0 0 0 1px rgba(53, 86, 129, 0.4) inset, 0 0 5px rgba(53, 86, 129, 0.5) inset, -285px 0 34px #368EE0 inset;
+    color: #FFFFFF;
+    font-family: 'Titillium Web',sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 28px;
+    margin: 0 0 10%;
+    padding: 3px 3px 3px 4%;
+    position: relative;
 	}
 	
 	p {
@@ -703,10 +573,10 @@ ul.form {
     width: 497px;
 }
 :-moz-placeholder {
-    color: #FFFFFF;
+    color: #C8B7AD;
 }
 *::-moz-placeholder {
-    color: #FFFFFF;
+    color: #C8B7AD;
 }
 .search_text:focus {
     background: none repeat scroll 0 0 #409777;
@@ -754,3 +624,160 @@ ul.form {
     
 }
 
+
+#sidebar {
+	background-color: rgba(0, 0, 0, 0);
+	border-bottom-color: rgba(0, 0, 0, 0);
+	border-top-color: #D8DFEA;
+	line-height: 15px;
+	padding-right: 5px;
+	width: 20%;
+	height: 100%;
+	float: right;
+	}
+	
+	
+/* Tables */
+table { display: table; background-color: white; border-collapse: collapse; border-spacing: 0; margin-bottom: 20px; width: 100%; border: 1px solid #e5e5e5; }
+table caption { text-align: center; font-size: 30px; padding: .75em; }
+table thead th, table tbody td, table tr td { display: table-cell; padding: 10px; vertical-align: top; text-align: left; border-top: 1px solid #e5e5e5; }
+table tr td, table tbody tr td { font-size: 16px; }
+table tr td:first-child { font-weight: bold; }
+table thead { background-color: #3085d6; color: #fff; }
+table thead tr th { font-size: 16px; font-weight: bold; vertical-align: bottom; }
+table.striped tr:nth-of-type(even), table table tr.stripe, table table tr.striped { background-color: #e5e5e5; }
+table.rounded { border-radius: 4px; border-collapse: separate; }
+table.rounded caption + thead tr:first-child th:first-child, table.rounded caption + tr td:first-child, table.rounded > thead tr:first-child th:first-child, table.rounded > thead tr:first-child td:first-child, table.rounded > tr:first-child td:first-child { border-top-left-radius: 4px; }
+table.rounded caption + thead tr:first-child th:last-child, table.rounded caption + tr td:last-child, table.rounded > thead tr:first-child th:last-child, table.rounded > thead tr:first-child td:last-child, table.rounded > tr:first-child td:last-child { border-top-right-radius: 4px; }
+table.rounded thead ~ tr:last-child td:last-child, table.rounded tbody tr:last-child td:last-child { border-bottom-right-radius: 4px; }
+table.rounded thead ~ tr:last-child td:first-child, table.rounded tbody tr:last-child td:first-child { border-bottom-left-radius: 4px; }
+table.rounded thead th, table.rounded thead td, table.rounded caption + tbody tr:first-child td, table.rounded > tbody:first-child tr:first-child td { border-top: 0; }
+
+/* Login Form */
+
+/*
+ * Styling the container for the login form.
+ */
+
+.login {
+	width:350px;
+	padding:25px;
+	margin:50px auto;
+	background-color:#FFFFFF;
+	}
+/*
+ * Styling the Lables and checkbox font
+ */
+		
+.login label {
+	font-size:16px;
+	font-family: 'Roboto Slab', serif;
+	color:#000;
+	}
+	
+.check {
+	font-size:15px;
+	font-family: 'Roboto Slab', serif;}		
+
+/*
+ * General Input Style
+ */
+		
+.login input[type="text"],
+input[type="password"],
+input[type="submit"],
+input[type="button"]  {
+	width: calc(100% - 33px);
+	margin:0px 0 0px 0;
+	padding:15px;
+	border: solid 1px #ccc;
+	font-size:20px;
+	background-color:#FFF;
+	}	
+
+/*
+ * Styling the Buttons
+ */
+		
+.login input[type="submit"],
+input[type="button"] {
+	position:relative;
+	width:calc(50% - 13px);
+	background-color:#3498db;
+	border:none;
+	color:#FFF;
+	
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+	
+	
+	}
+	
+.login input[type="submit"]:active,
+input[type="button"]:active{
+	
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+	
+    position:relative;
+    top:7px;
+	
+    -webkit-box-shadow: 0px 2px 0px #16a085;
+    -moz-box-shadow: 0px 2px 0px #16a085;
+    box-shadow: 0px 2px 0px #16a085;
+}	
+	
+.login input[type="submit"] {
+	float: none;
+    margin: 5% 54% 0%;
+	}	
+
+/*
+ * Styling the checkbox
+ */
+		
+.login input[type="checkbox"] {
+	-webkit-appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #cacece;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px;
+	border-radius: 3px;
+	position: relative;
+}
+
+.login input[type="checkbox"]:active, .input[type="checkbox"]:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.login input[type="checkbox"]:checked {
+	background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+.login input[type="checkbox"]:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: #99a1a7;
+}
+
+#footer {
+                position: relative;
+                bottom: 0px;
+                width: 100%;
+                height: 30px;
+                width: 100%;
+                background: #fff;
+        }
+        
+#footer p{
+	color: red;
+	margin-bottom: 5px;
+}

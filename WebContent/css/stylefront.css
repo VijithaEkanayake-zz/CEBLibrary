@@ -1,0 +1,130 @@
+
+
+/* Login Form */
+
+/*
+ * Styling the container for the login form.
+ */
+
+.login {
+	width:350px;
+	padding:25px;
+	margin:50px auto;
+	background-color:#FFFFFF;
+	}
+/*
+ * Styling the Lables and checkbox font
+ */
+		
+.login label {
+	font-size:16px;
+	font-family: 'Roboto Slab', serif;
+	color:#000;
+	}
+	
+.check {
+	font-size:15px;
+	font-family: 'Roboto Slab', serif;}		
+
+/*
+ * General Input Style
+ */
+		
+.login input[type="text"],
+input[type="password"],
+input[type="submit"],
+input[type="button"]  {
+	width: calc(100% - 33px);
+	margin:0px 0 0px 0;
+	padding:15px;
+	border: solid 1px #ccc;
+	font-size:20px;
+	background-color:#FFF;
+	}	
+
+/*
+ * Styling the Buttons
+ */
+		
+.login input[type="submit"],
+input[type="button"] {
+	position:relative;
+	width:calc(50% - 13px);
+	background-color:#3498db;
+	border:none;
+	color:#FFF;
+	
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+	
+	
+	}
+	
+.login input[type="submit"]:active,
+input[type="button"]:active{
+	
+	-webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+	
+    position:relative;
+    top:7px;
+	
+    -webkit-box-shadow: 0px 2px 0px #16a085;
+    -moz-box-shadow: 0px 2px 0px #16a085;
+    box-shadow: 0px 2px 0px #16a085;
+}	
+	
+.login input[type="submit"] {
+	float: none;
+    margin: 5% 54% 0%;
+	}	
+
+/*
+ * Styling the checkbox
+ */
+		
+.login input[type="checkbox"] {
+	-webkit-appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #cacece;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px;
+	border-radius: 3px;
+	position: relative;
+}
+
+.login input[type="checkbox"]:active, .input[type="checkbox"]:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.login input[type="checkbox"]:checked {
+	background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+.login input[type="checkbox"]:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: #99a1a7;
+}
+
+#footer {
+                position: relative;
+                bottom: 0px;
+                width: 100%;
+                height: 30px;
+                width: 100%;
+                background: #fff;
+        }
+        
+#footer p{
+	color: red;
+	margin-bottom: 5px;
+}

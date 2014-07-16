@@ -4,15 +4,13 @@
 package com.vijitha.controller;
 
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.vijitha.dao.MemberDao;
 import com.vijitha.model.Member;
@@ -29,6 +27,8 @@ public class MemberController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	private static String INSERT_OR_EDIT = "/Member.jsp";
     private static String LIST_MEMBER = "/listmember.jsp";
+    private static String VIEW_MEMBER = "/individualmemberdetails.jsp";
+    private static String VIEW_MEMBER_PF = "/memberpf.jsp";
     
     
     private MemberDao dao;
@@ -43,7 +43,9 @@ public class MemberController extends HttpServlet{
     	
     	String forward="";
     	String action=request.getParameter("action");
-    	
+    	HttpSession session = request.getSession(true);
+    	String userLevel = session.getAttribute("userLevel").toString();
+    	request.setAttribute("userLevel", userLevel);
     	if(action.equalsIgnoreCase("delete")){
     		String memberId=request.getParameter("memberId");
     		dao.deleteMember(memberId);
@@ -53,6 +55,16 @@ public class MemberController extends HttpServlet{
 			forward=INSERT_OR_EDIT;
 			String memberId=request.getParameter("memberId");
 			Member member=dao.getMemberById(memberId);
+			request.setAttribute("member", member);
+		}else if (action.equalsIgnoreCase("view")) {
+			forward=VIEW_MEMBER;
+			String memberId=request.getParameter("memberId");
+			Member member=dao.getMemberById(memberId);
+			request.setAttribute("member", member);
+		}else if (action.equalsIgnoreCase("viewpf")) {
+			forward=VIEW_MEMBER_PF;
+			String email=request.getParameter("email");
+			Member member=dao.getMemberById(email);
 			request.setAttribute("member", member);
 		}else if (action.equalsIgnoreCase("listMember")) {
 			forward=LIST_MEMBER;
@@ -68,6 +80,9 @@ public class MemberController extends HttpServlet{
     
     
     protected void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
+    	HttpSession session = request.getSession(true);
+    	String userLevel = session.getAttribute("userLevel").toString();
+    	request.setAttribute("userLevel", userLevel);
     	Member member = new Member();
     	member.setId(request.getParameter("id"));
 		member.setPfNo(request.getParameter("pf_no"));
@@ -78,7 +93,7 @@ public class MemberController extends HttpServlet{
 		member.setHomeAddr(request.getParameter("homeAddr"));
 		member.setContactNo(request.getParameter("contactNo"));
 		member.setEmail(request.getParameter("email"));
-		
+		/*
 		SimpleDateFormat formatter1= new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat formatter2 = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat formatter3 = new SimpleDateFormat("yyyy-MM-dd");
@@ -99,6 +114,8 @@ public class MemberController extends HttpServlet{
 		member.setCivilStatus(request.getParameter("civilStatus"));
 		member.setGender(request.getParameter("gender"));
 		member.setProf_qualification(request.getParameter("prof_qualifications"));
+		
+		*/
 		member.setUserLevel("member");
 		member.setPassword(request.getParameter("password"));
     	

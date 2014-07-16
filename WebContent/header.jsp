@@ -8,6 +8,9 @@
 <title>Ceylon Electricity Board</title>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link rel="stylesheet" href="css/style.css" type="text/css" /> 
+<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -51,15 +54,10 @@ $(function() {
 
                 <ul>
                     <li><a><img src="img/Banner.jpg" /></a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
             
-            <div class="leftside">
+            <div class="leftside" id="leftmenu">
          		<ul class="form">
 		<li><a class="profile" href="MemberController?action=listmember"><i class="icon-user"></i>Show All Members</a></li>
 		<li><a class="messages" href="BookController?action=listbooks"><i class="icon-envelope-alt"></i>List of Books</a></li>

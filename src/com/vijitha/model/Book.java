@@ -11,9 +11,10 @@ import java.util.Date;
  */
 public class Book {
 	
-	private String id,title,isbn,author,classNo,rackNo,publisher,description,keywords,recordType,bibliographicLevel,headingIdentifier,typeofMaterial;
-	private int noofBooks,edition;
-	private Date dateofArrival;
+	private String id,title,isbn,author1,author2,author3,author4,corporateBody1,corporateBody2,corporateBody3,corporateBody4,series,classNo,rackNo,publisher,description,keywords,recordType,bibliographicLevel,heading,headingIdentifier,typeofMaterial,notes,abstractofBook,broadHeading,geoCode,enteredBy;
+
+	private int noofBooks,yearofPublication,edition;
+	private Date dateofArrival,enteredDate;
 	/**
 	 * @return the id
 	 */
@@ -50,18 +51,7 @@ public class Book {
 	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
-	/**
-	 * @return the author
-	 */
-	public String getAuthor() {
-		return author;
-	}
-	/**
-	 * @param author the author to set
-	 */
-	public void setAuthor(String author) {
-		this.author = author;
-	}
+	
 	/**
 	 * @return the classNo
 	 */
@@ -207,7 +197,108 @@ public class Book {
 		this.dateofArrival = dateofArrival;
 	}
 	
-	
+	public String getHeading() {
+		return heading;
+	}
+	public void setHeading(String heading) {
+		this.heading = heading;
+	}
+	public String getAuthor1() {
+		return author1;
+	}
+	public String getAuthor2() {
+		return author2;
+	}
+	public String getAuthor3() {
+		return author3;
+	}
+	public String getAuthor4() {
+		return author4;
+	}
+	public String getCorporateBody1() {
+		return corporateBody1;
+	}
+	public String getCorporateBody2() {
+		return corporateBody2;
+	}
+	public String getCorporateBody3() {
+		return corporateBody3;
+	}
+	public String getCorporateBody4() {
+		return corporateBody4;
+	}
+	public String getSeries() {
+		return series;
+	}
+	public String getNotes() {
+		return notes;
+	}
+	public String getAbstractofBook() {
+		return abstractofBook;
+	}
+	public String getBroadHeading() {
+		return broadHeading;
+	}
+	public String getGeoCode() {
+		return geoCode;
+	}
+	public String getEnteredBy() {
+		return enteredBy;
+	}
+	public int getYearofPublication() {
+		return yearofPublication;
+	}
+	public Date getEnteredDate() {
+		return enteredDate;
+	}
+	public void setAuthor1(String author1) {
+		this.author1 = author1;
+	}
+	public void setAuthor2(String author2) {
+		this.author2 = author2;
+	}
+	public void setAuthor3(String author3) {
+		this.author3 = author3;
+	}
+	public void setAuthor4(String author4) {
+		this.author4 = author4;
+	}
+	public void setCorporateBody1(String corporateBody1) {
+		this.corporateBody1 = corporateBody1;
+	}
+	public void setCorporateBody2(String corporateBody2) {
+		this.corporateBody2 = corporateBody2;
+	}
+	public void setCorporateBody3(String corporateBody3) {
+		this.corporateBody3 = corporateBody3;
+	}
+	public void setCorporateBody4(String corporateBody4) {
+		this.corporateBody4 = corporateBody4;
+	}
+	public void setSeries(String series) {
+		this.series = series;
+	}
+	public void setNotes(String notes) {
+		this.notes = notes;
+	}
+	public void setAbstractofBook(String abstractofBook) {
+		this.abstractofBook = abstractofBook;
+	}
+	public void setBroadHeading(String broadHeading) {
+		this.broadHeading = broadHeading;
+	}
+	public void setGeoCode(String geoCode) {
+		this.geoCode = geoCode;
+	}
+	public void setEnteredBy(String enteredBy) {
+		this.enteredBy = enteredBy;
+	}
+	public void setYearofPublication(int yearofPublication) {
+		this.yearofPublication = yearofPublication;
+	}
+	public void setEnteredDate(Date enteredDate) {
+		this.enteredDate = enteredDate;
+	}
 	
 
 }

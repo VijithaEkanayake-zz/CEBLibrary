@@ -9,6 +9,14 @@
     <url-pattern>/MemberController</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>MemberpfController</servlet-name>
+    <servlet-class>com.vijitha.controller.MemberpfController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MemberpfController</servlet-name>
+    <url-pattern>/MemberpfController</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>LoginController</servlet-name>
     <servlet-class>com.vijitha.controller.LoginController</servlet-class>
   </servlet>

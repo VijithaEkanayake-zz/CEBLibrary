@@ -1,11 +1,19 @@
-<%@ include file="admin/header.jsp" %>
+<%
+if(request.getAttribute("userLevel").equals("member")){ %>
+	<%@ include file="header.jsp" %>
+<%}else{%>
+	<%@ include file="admin/header.jsp" %>
+<%}
+%>
 <div class="content">
-	<table border=1 class="CSSTableGenerator">
+<div style="background: #3C3B37; width: 100%;"><input type="button" value="Back" onclick="history.back()"></div>
+	<table border=1 >
         <thead>
             <tr>
                 <th>Book Acc No.</th>
                 <th>Member ID</th>
                 <th>Issued Date</th>
+                <th>Should Return</th>
                 <th>Issued Person</th>
                 <th>Issue ID</th>
                
@@ -17,6 +25,7 @@
                     <td><c:out value="" /> ${bookissues.accNo}</td>
                     <td><c:out value="" /> ${bookissues.memberId}</td>
                     <td><c:out value="" /> ${bookissues.issuedDate}</td>
+                    <td><c:out value="" /> ${bookissues.legalReturnDate}</td>
                     <td><c:out value="" /> ${bookissues.issuer}</td>
                     <td><c:out value="" /> ${bookissues.issueID}</td>
                 </tr>

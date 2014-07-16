@@ -51,7 +51,7 @@ public class MemberDao {
 	
 	public void addMember(Member member){
 		try {
-			PreparedStatement ps=connection.prepareStatement("INSERT INTO member (member_id,pf_no,name,designation,branch,off_addr,private_addr,contact_no,email,doj,doa,dob,civil_status,gender,prof_qualifications,user_level,password) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+			PreparedStatement ps=connection.prepareStatement("INSERT INTO member (member_id,pf_no,name,designation,branch,off_addr,private_addr,contact_no,email,user_level,password) VALUES(?,?,?,?,?,?,?,?,?,?,?);");
 			ps.setString(1, member.getId());
 			ps.setString(2, member.getPfNo());
 			ps.setString(3, member.getName());
@@ -61,14 +61,8 @@ public class MemberDao {
 			ps.setString(7, member.getHomeAddr());
 			ps.setString(8, member.getContactNo());
 			ps.setString(9, member.getEmail());
-			ps.setDate(10, new java.sql.Date(member.getDoj().getTime()));
-			ps.setDate(11,new java.sql.Date(member.getDoa().getTime()));
-			ps.setDate(12,new java.sql.Date(member.getDob().getTime()));
-			ps.setString(13, member.getCivilStatus());
-			ps.setString(14, member.getGender());
-			ps.setString(15, member.getProf_qualification());
-			ps.setString(16, member.getUserLevel());
-			ps.setString(17, member.getPassword());
+			ps.setString(10, member.getUserLevel());
+			ps.setString(11, member.getPassword());
 			ps.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -80,7 +74,7 @@ public class MemberDao {
 	//TODO implement member update function
 	public void updateMember(Member member){
 		try {
-			PreparedStatement ps=connection.prepareStatement("UPDATE member SET member_id=?,pf_no=?,name=?,designation=?,branch=?,off_addr=?,private_addr=?,contact_no=?,email=?,doj=?,doa=?,dob=?,civil_status=?,gender=?,prof_qualifications=?,user_level=?,password=? WHERE member_id=? ");
+			PreparedStatement ps=connection.prepareStatement("UPDATE member SET member_id=?,pf_no=?,name=?,designation=?,branch=?,off_addr=?,private_addr=?,contact_no=?,email=?,user_level=?,password=? WHERE member_id=? ");
 			ps.setString(1, member.getId());
 			ps.setString(2, member.getPfNo());
 			ps.setString(3, member.getName());
@@ -90,15 +84,9 @@ public class MemberDao {
 			ps.setString(7, member.getHomeAddr());
 			ps.setString(8, member.getContactNo());
 			ps.setString(9, member.getEmail());
-			ps.setDate(10, new java.sql.Date(member.getDoj().getTime()));
-			ps.setDate(11,new java.sql.Date(member.getDoa().getTime()));
-			ps.setDate(12,new java.sql.Date(member.getDob().getTime()));
-			ps.setString(13, member.getCivilStatus());
-			ps.setString(14, member.getGender());
-			ps.setString(15, member.getProf_qualification());
-			ps.setString(16, member.getUserLevel());
-			ps.setString(17, member.getPassword());
-			ps.setString(18, member.getId());
+			ps.setString(10, member.getUserLevel());
+			ps.setString(11, member.getPassword());
+			ps.setString(12, member.getId());
 			ps.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -138,12 +126,6 @@ public class MemberDao {
 				member.setHomeAddr(rs.getString("private_addr"));
 				member.setContactNo(rs.getString("contact_no"));
 				member.setEmail(rs.getString("email"));
-				member.setDoj(rs.getDate("doj"));
-				member.setDoa(rs.getDate("doa"));
-				member.setDob(rs.getDate("dob"));
-				member.setCivilStatus(rs.getString("civil_status"));
-				member.setGender(rs.getString("gender"));
-				member.setProf_qualification(rs.getString("prof_qualifications"));
 				member.setUserLevel(rs.getString("user_level"));
 				member.setPassword(rs.getString("password"));
 				members.add(member);
@@ -174,12 +156,35 @@ public class MemberDao {
 				member.setHomeAddr(rs.getString("private_addr"));
 				member.setContactNo(rs.getString("contact_no"));
 				member.setEmail(rs.getString("email"));
-				member.setDoj(rs.getDate("doj"));
-				member.setDoa(rs.getDate("doa"));
-				member.setDob(rs.getDate("dob"));
-				member.setCivilStatus(rs.getString("civil_status"));
-				member.setGender(rs.getString("gender"));
-				member.setProf_qualification(rs.getString("prof_qualifications"));
+				member.setUserLevel(rs.getString("user_level"));
+				member.setPassword(rs.getString("password"));
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return member;
+	}
+	
+	public Member getMemberPfNoByEmail(String email){
+		Member member=new Member();
+		
+		try {
+			PreparedStatement ps=connection.prepareStatement("SELECT * FROM member WHERE email = ?");
+			ps.setString(1, email);
+			ResultSet rs=ps.executeQuery();
+			
+			if(rs.next()){
+				member.setId(rs.getString("member_id"));
+				member.setPfNo(rs.getString("pf_no"));
+				member.setName(rs.getString("name"));
+				member.setDesignation(rs.getString("designation"));
+				member.setBranch(rs.getString("branch"));
+				member.setOfficeAddr(rs.getString("off_addr"));
+				member.setHomeAddr(rs.getString("private_addr"));
+				member.setContactNo(rs.getString("contact_no"));
+				member.setEmail(rs.getString("email"));
 				member.setUserLevel(rs.getString("user_level"));
 				member.setPassword(rs.getString("password"));
 			}

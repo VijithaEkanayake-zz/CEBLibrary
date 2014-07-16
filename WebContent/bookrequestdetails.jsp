@@ -1,6 +1,13 @@
-<%@ include file="admin/header.jsp" %>
+<%
+if(request.getAttribute("userLevel").equals("member")){ %>
+	<%@ include file="header.jsp" %>
+<%}else{%>
+	<%@ include file="admin/header.jsp" %>
+<%}
+%>
 <div class="content">
-	<table border=1 class="CSSTableGenerator">
+<div style="background: #3C3B37; width: 100%;"><input type="button" value="Back" onclick="history.back()"></div>
+	<table border=1>
         <thead>
             <tr>
                 <th>Request ID</th>

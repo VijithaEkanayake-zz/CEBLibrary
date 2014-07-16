@@ -58,11 +58,13 @@ public class BookRequestController extends HttpServlet {
 		BookRequest bookRequest = new BookRequest();
 		String forward="";
     	String action=request.getParameter("action");
-    	
+    	HttpSession session = request.getSession(true);
+    	String userLevel = session.getAttribute("userLevel").toString();
+    	request.setAttribute("userLevel", userLevel);
     	if(action.equalsIgnoreCase("viewrequest")){
     		forward=VIEW_REQUEST;
     		bookRequest.setBookId(request.getParameter("bookId"));
-    		HttpSession session = request.getSession(true);
+    		
     		String username = session.getAttribute("pfNo").toString();
     		bookRequest.setMemberId(username);
     		
@@ -101,7 +103,16 @@ public class BookRequestController extends HttpServlet {
     			// TODO Auto-generated catch block
     			e.printStackTrace();
     		}
-    		HttpSession session = request.getSession(true);
+    		
+    		SimpleDateFormat formatter2= new SimpleDateFormat("yyyy-MM-dd");
+    		try {
+    			Date dor = formatter2.parse((String) session.getAttribute("returnDate"));
+    			bookIssue.setLegalReturnDate(dor);
+    		} catch (ParseException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+    		
     		String username = session.getAttribute("username").toString();
 			bookIssue.setIssuer(username);		
 			bookIssueDao.issueRequestedBook(bookIssue);

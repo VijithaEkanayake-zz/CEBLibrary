@@ -18,7 +18,7 @@ public class DbConnection {
 	public static Connection getConnection() throws ClassNotFoundException{
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/ceb_olms","root","toor");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/ceb_olms_v1","root","toor");
 			return con;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

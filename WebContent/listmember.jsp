@@ -1,6 +1,12 @@
-<%@ include file="admin/header.jsp" %>
+<%
+if(request.getAttribute("userLevel").equals("member")){ %>
+	<%@ include file="header.jsp" %>
+<%}else{%>
+	<%@ include file="admin/header.jsp" %>
+<%}
+%>
 <div class="content">
-	<table border=1 class="CSSTableGenerator">
+	<table border=1 >
         <thead>
             <tr>
                 <th>Member ID</th>
@@ -10,8 +16,14 @@
                 <th>Branch</th>
                 <th>Contact Number</th>
                 <th>Email</th>
-                <th>Date of Birth</th>
-                <th colspan=2>Action</th>
+                <%
+if(request.getAttribute("userLevel").equals("admin")){ %>
+	<th colspan=3>Action</th>
+<%}else{%>
+	<th>Action</th>
+<%}
+%>
+                
             </tr>
         </thead>
         <tbody>
@@ -24,10 +36,18 @@
                     <td><c:out value="" /> ${member.branch}</td>
                     <td><c:out value="" /> ${member.contactNo}</td>
                     <td><c:out value="" /> ${member.email}</td>
-                    <td><c:out value="" /> ${member.dob}</td>
                     
-                    <td><a href="MemberController?action=edit&memberId=<c:out value="${member.id}"/>">Update</a></td>
+                    <%
+if(request.getAttribute("userLevel").equals("admin")){ %>
+	<td><a href="MemberController?action=edit&memberId=<c:out value="${member.id}"/>">Update</a></td>
                     <td><a href="MemberController?action=delete&memberId=<c:out value="${member.id}"/>">Delete</a></td>
+                    <td><a href="MemberController?action=view&memberId=<c:out value="${member.id}"/>">View Details</a></td>
+<%}else{%>
+	<td><a href="MemberController?action=view&memberId=<c:out value="${member.id}"/>">View Details</a></td>
+<%}
+%>
+                    
+                    
                 </tr>
             </c:forEach>
         </tbody>

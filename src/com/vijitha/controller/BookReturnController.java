@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.vijitha.dao.BookReturnsDao;
 import com.vijitha.model.BookReturns;
@@ -40,29 +41,35 @@ public class BookReturnController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		doPost(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession(true);
+    	String userLevel = session.getAttribute("userLevel").toString();
+    	request.setAttribute("userLevel", userLevel);
 		BookReturns bookReturns = new BookReturns();
-    	bookReturns.setAccNo(request.getParameter("acc_no"));
-		bookReturns.setMemberId(request.getParameter("member_id"));
+    	bookReturns.setAccNo(request.getParameter("bookId"));
+		bookReturns.setMemberId(request.getParameter("memberId"));
+		bookReturns.setFine(Integer.parseInt(request.getParameter("amount")));
+		java.text.DateFormat df = new java.text.SimpleDateFormat("yyyy-MM-dd");
 		
 		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd");
 		
 		try {
-			Date dor = formatter.parse(request.getParameter("dor"));
+			Date dor = formatter.parse(df.format(new java.util.Date()));
 			bookReturns.setReturnedDate(dor);
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		bookReturns.setReceiver(request.getParameter("receiver"));		
 		
+		bookReturns.setReceiver(session.getAttribute("username").toString());		
+		System.out.println("session name : "+session.getAttribute("username").toString());
 		dao.returnBook(bookReturns);
 		RequestDispatcher view = request.getRequestDispatcher(ADMIN_HOME);
         //request.setAttribute("bookissues", dao.getAllIssuedBooks());

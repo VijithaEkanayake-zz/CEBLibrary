@@ -43,6 +43,9 @@ public class BookReturnsDao {
 			ps.executeUpdate();
 			removeReturned(bookIssues);
 			updateAvailableCopies(bookReturns); 
+			if(bookReturns.getFine()>0){
+				updateFine(bookReturns.getIssueId(), bookReturns.getFine());
+			}
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -121,6 +124,19 @@ public class BookReturnsDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+	
+	public void updateFine(int id,int amount) {
+		
+		try {
+			PreparedStatement ps=connection.prepareStatement("INSERT INTO fine (issue_id,amount) VALUES(?,?);");
+			ps.setInt(1, id);
+			ps.setInt(2, amount);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 
 }

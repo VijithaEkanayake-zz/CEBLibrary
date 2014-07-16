@@ -3,15 +3,12 @@
  */
 package com.vijitha.model;
 
-import java.util.Date;
-
 /**
  * @author Vijitha
  *
  */
 public class Member {
-	private String id,pfNo,name,designation,branch,officeAddr,homeAddr,contactNo,email,civilStatus,gender,prof_qualification,userLevel,password;
-	private Date doj,doa,dob;
+	private String id,pfNo,name,designation,branch,officeAddr,homeAddr,contactNo,email,userLevel,password;
 	/**
 	 * @return the id
 	 */
@@ -111,39 +108,6 @@ public class Member {
 	/**
 	 * @return the civilStatus
 	 */
-	public String getCivilStatus() {
-		return civilStatus;
-	}
-	/**
-	 * @param civilStatus the civilStatus to set
-	 */
-	public void setCivilStatus(String civilStatus) {
-		this.civilStatus = civilStatus;
-	}
-	/**
-	 * @return the gender
-	 */
-	public String getGender() {
-		return gender;
-	}
-	/**
-	 * @param gender the gender to set
-	 */
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	/**
-	 * @return the prof_qualification
-	 */
-	public String getProf_qualification() {
-		return prof_qualification;
-	}
-	/**
-	 * @param prof_qualification the prof_qualification to set
-	 */
-	public void setProf_qualification(String prof_qualification) {
-		this.prof_qualification = prof_qualification;
-	}
 	
 	/**
 	 * @return the userLevel
@@ -156,42 +120,6 @@ public class Member {
 	 */
 	public void setUserLevel(String userLevel) {
 		this.userLevel = userLevel;
-	}
-	/**
-	 * @return the doj
-	 */
-	public Date getDoj() {
-		return doj;
-	}
-	/**
-	 * @param doj the doj to set
-	 */
-	public void setDoj(Date doj) {
-		this.doj = doj;
-	}
-	/**
-	 * @return the doa
-	 */
-	public Date getDoa() {
-		return doa;
-	}
-	/**
-	 * @param doa the doa to set
-	 */
-	public void setDoa(Date doa) {
-		this.doa = doa;
-	}
-	/**
-	 * @return the dob
-	 */
-	public Date getDob() {
-		return dob;
-	}
-	/**
-	 * @param dob the dob to set
-	 */
-	public void setDob(Date dob) {
-		this.dob = dob;
 	}
 	/**
 	 * @return the contactNo

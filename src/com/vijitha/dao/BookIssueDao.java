@@ -13,6 +13,7 @@ import java.util.List;
 
 import com.vijitha.model.BookIssues;
 import com.vijitha.util.DbConnection;
+import com.vijitha.util.FineCalculator;
 
 /**
  * @author Vijitha
@@ -32,11 +33,12 @@ public class BookIssueDao {
 	
 	public void issueBook(BookIssues bookIssue){
 		try {
-			PreparedStatement ps=connection.prepareStatement("INSERT INTO issues (acc_no,member_id,issued_date,issuedby) VALUES(?,?,?,?);");
+			PreparedStatement ps=connection.prepareStatement("INSERT INTO issues (acc_no,member_id,issued_date,legal_return,issuedby) VALUES(?,?,?,?,?);");
 			ps.setString(1, bookIssue.getAccNo());
 			ps.setString(2, bookIssue.getMemberId());
 			ps.setDate(3, new java.sql.Date(bookIssue.getIssuedDate().getTime()));
-			ps.setString(4, bookIssue.getIssuer());
+			ps.setDate(4, new java.sql.Date(bookIssue.getLegalReturnDate().getTime()));
+			ps.setString(5, bookIssue.getIssuer());
 			ps.executeUpdate();
 			updateAvailableCopies(bookIssue); 
 			
@@ -49,11 +51,12 @@ public class BookIssueDao {
 	
 	public void issueRequestedBook(BookIssues bookIssue){
 		try {
-			PreparedStatement ps=connection.prepareStatement("INSERT INTO issues (acc_no,member_id,issued_date,issuedby) VALUES(?,?,?,?);");
+			PreparedStatement ps=connection.prepareStatement("INSERT INTO issues (acc_no,member_id,issued_date,legal_return,issuedby) VALUES(?,?,?,?,?);");
 			ps.setString(1, bookIssue.getAccNo());
 			ps.setString(2, bookIssue.getMemberId());
 			ps.setDate(3, new java.sql.Date(bookIssue.getIssuedDate().getTime()));
-			ps.setString(4, bookIssue.getIssuer());
+			ps.setDate(4, new java.sql.Date(bookIssue.getLegalReturnDate().getTime()));
+			ps.setString(5, bookIssue.getIssuer());
 			ps.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -81,6 +84,7 @@ public class BookIssueDao {
 					bookIssues.setAccNo(rs.getString("acc_no"));
 					bookIssues.setMemberId(rs.getString("member_id"));
 					bookIssues.setIssuedDate(rs.getDate("issued_date"));
+					bookIssues.setLegalReturnDate(rs.getDate("legal_return"));
 					bookIssues.setIssuer(rs.getString("issuedby"));
 					bookIssued.add(bookIssues);
 				}
@@ -129,6 +133,61 @@ public class BookIssueDao {
 			}
 			System.out.print("count "+count);
 			return count;		
+		}
+		
+		public List<BookIssues> getIndividualsIssuedBooks(String id){
+			List<BookIssues> bookIssued=new ArrayList<BookIssues>();
+			
+			
+			try {
+				PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM issues WHERE member_id = ?");
+				preparedStatement.setString(1, id);
+	            ResultSet rs = preparedStatement.executeQuery();
+				while(rs.next()){
+					BookIssues bookIssues =new BookIssues();
+					bookIssues.setIssueID(rs.getInt("issue_id"));
+					bookIssues.setAccNo(rs.getString("acc_no"));
+					bookIssues.setMemberId(rs.getString("member_id"));
+					bookIssues.setIssuedDate(rs.getDate("issued_date"));
+					bookIssues.setLegalReturnDate(rs.getDate("legal_return"));
+					bookIssues.setIssuer(rs.getString("issuedby"));
+					bookIssues.setFine(new FineCalculator().calculateFine(bookIssues));
+					bookIssued.add(bookIssues);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		System.out.println(bookIssued.size() +"  ::::::::::::::::::");
+			return bookIssued;
+		}
+		
+		
+		public List<BookIssues> getAllIssuedBooks(String id){
+			List<BookIssues> bookIssued=new ArrayList<BookIssues>();
+			
+			
+			try {
+				PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM issues WHERE issue_id = ?");
+				preparedStatement.setString(1, id);
+	            ResultSet rs = preparedStatement.executeQuery();
+				while(rs.next()){
+					BookIssues bookIssues =new BookIssues();
+					bookIssues.setIssueID(rs.getInt("issue_id"));
+					bookIssues.setAccNo(rs.getString("acc_no"));
+					bookIssues.setMemberId(rs.getString("member_id"));
+					bookIssues.setIssuedDate(rs.getDate("issued_date"));
+					bookIssues.setLegalReturnDate(rs.getDate("legal_return"));
+					bookIssues.setIssuer(rs.getString("issuedby"));
+					bookIssues.setFine(new FineCalculator().calculateFine(bookIssues));
+					bookIssued.add(bookIssues);
+				}
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		System.out.println(bookIssued.size() +"  ::::::::::::::::::");
+			return bookIssued;
 		}
 
 }

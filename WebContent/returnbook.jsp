@@ -1,4 +1,10 @@
-<%@ include file="admin/header.jsp" %>
+<%
+if(request.getAttribute("userLevel").equals("member")){ %>
+	<%@ include file="header.jsp" %>
+<%}else{%>
+	<%@ include file="admin/header.jsp" %>
+<%}
+%>
                 <div class="span5">
 	 <form method="POST" action='BookReturnController' name="frmIssueBook" class="login" >
 	 	
@@ -25,7 +31,7 @@
                      
             <div class="controls">    
             <input
-                type="hidden" name="receiver"  value="<% out.print(session.getAttribute("username")); %>" class="login-input" placeholder="Date of Issue" id="doi"
+                type="hidden" name="receiver"  value="<% out.print(session.getAttribute("username")); %>" class="login-input" 
                  /> <br /> 
             </div>
             

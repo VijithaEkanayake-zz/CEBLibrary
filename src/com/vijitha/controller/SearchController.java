@@ -10,6 +10,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.vijitha.dao.BookDao;
 
@@ -38,7 +39,9 @@ public class SearchController extends HttpServlet{
 		String name=request.getParameter("search_text");
 		String criteria=request.getParameter("criteria");
 		System.out.println(name+"+++++++++"+criteria);		
-		
+		HttpSession session = request.getSession(true);
+    	String userLevel = session.getAttribute("userLevel").toString();
+    	request.setAttribute("userLevel", userLevel);
 		
 		try {
 			RequestDispatcher view=request.getRequestDispatcher("/searchbookresult.jsp");

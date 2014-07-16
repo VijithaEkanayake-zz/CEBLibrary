@@ -1,10 +1,4 @@
-<%@ include file="header.jsp" %>
-
-
-<c:if test="${userLevel =='member'}">
-
-</c:if>
-
-
-</body>
-</html>
+<%@ include file="header.jsp"%>
+<div class="content">
+	
+</div>

@@ -18,7 +18,7 @@ public class BookReturns {
 	String issuer;
 	Date returnedDate;
 	String receiver;
-	
+	int fine;
 	
 	public int getIssueId() {
 		return issueId;
@@ -61,6 +61,12 @@ public class BookReturns {
 	}
 	public void setReceiver(String receiver) {
 		this.receiver = receiver;
+	}
+	public int getFine() {
+		return fine;
+	}
+	public void setFine(int fine) {
+		this.fine = fine;
 	}
 	
 	

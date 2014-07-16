@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.vijitha.dao.BookIssueDao;
 import com.vijitha.model.BookIssues;
@@ -23,6 +24,8 @@ public class BookIssueController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static String INSERT = "/issuebook.jsp";
 	private static String LIST_ISSUES = "/listissuedbooks.jsp";
+	private static String LIST_ALL_ISSUES = "/issuedetails.jsp";
+	private static String VIEW_ISSUE = "/fines.jsp";
 	
 	
 	private BookIssueDao dao;
@@ -41,15 +44,21 @@ public class BookIssueController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String forward="";
     	String action=request.getParameter("action");
-    	
+    	String issueId = request.getParameter("issueId");
+    	HttpSession session = request.getSession(true);
+    	String userLevel = session.getAttribute("userLevel").toString();
+    	request.setAttribute("userLevel", userLevel);
     	if(action.equalsIgnoreCase("delete")){
     		String bookId=request.getParameter("bookId");
     		dao.removeBookIssue(bookId);
     		forward = LIST_ISSUES;
     		request.setAttribute("bookissues", dao.getAllIssuedBooks());
 		}else if (action.equalsIgnoreCase("listBooks")) {
-			forward=LIST_ISSUES;
+			forward=LIST_ALL_ISSUES;
 			request.setAttribute("books", dao.getAllIssuedBooks());		
+		}else if (action.equalsIgnoreCase("viewissue")) {
+			forward=VIEW_ISSUE;
+			request.setAttribute("bookissues", dao.getAllIssuedBooks(issueId));		
 		}else {
 			forward=INSERT;
 		}
@@ -63,6 +72,12 @@ public class BookIssueController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		BookIssues bookIssue = new BookIssues();
+		String command = request.getParameter("command");
+		System.out.print("action"+command);
+		HttpSession session = request.getSession(true);
+    	String userLevel = session.getAttribute("userLevel").toString();
+    	request.setAttribute("userLevel", userLevel);
+		if(command.equalsIgnoreCase("issuebook")){
     	bookIssue.setAccNo(request.getParameter("acc_no"));
 		bookIssue.setMemberId(request.getParameter("member_id"));
 		
@@ -75,12 +90,27 @@ public class BookIssueController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		SimpleDateFormat formatter1= new SimpleDateFormat("yyyy-MM-dd");
+		
+		try {
+			Date dor = formatter1.parse(request.getParameter("dor"));
+			bookIssue.setLegalReturnDate(dor);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		bookIssue.setIssuer(request.getParameter("issuer"));		
 		dao.issueBook(bookIssue);
 		RequestDispatcher view = request.getRequestDispatcher(LIST_ISSUES);
         request.setAttribute("bookissues", dao.getAllIssuedBooks());
         view.forward(request, response);
+	}else if (command.equalsIgnoreCase("individualissues")) {
+		String memberId = (request.getParameter("member_id"));
+		RequestDispatcher view = request.getRequestDispatcher("/fines.jsp");
+        request.setAttribute("bookissues", dao.getIndividualsIssuedBooks(memberId));
+        view.forward(request, response);
+		
 	}
-
+	}
 }
