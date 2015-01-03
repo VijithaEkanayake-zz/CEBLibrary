@@ -7,7 +7,6 @@ import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,7 +18,6 @@ import com.vijitha.model.BookReturns;
 /**
  * Servlet implementation class BookReturnController
  */
-@WebServlet("/BookReturnController")
 public class BookReturnController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	//private static String INSERT = "/returnbook.jsp";

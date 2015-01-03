@@ -1,6 +1,21 @@
 <%@ include file="header.jsp" %>
 
-<% System.out.print("return date is : "+session.getAttribute("returnDate")); %>
-<c:if test="${userLevel =='member'}">
+<div class="content">
 
-</c:if>
+	<a href="StandardController?action=insert">
+		<div class="cbp-mc-column">
+			<input class="cbp-mc-submit" type="submit" value="Add Standards">
+		</div>
+	</a> <a href="standards/search.jsp"><div class="cbp-mc-column">
+			<input class="cbp-mc-submit" type="submit" value="Search Standards"
+				name="search_button" onclick="standards/search.jsp">
+		</div></a> <a class="logout" href="StandardController?action=liststandards"><i
+		class="icon-signout"></i>
+	<div class="cbp-mc-column">
+			<input class="cbp-mc-submit" type="submit" value="List All Standards"
+				name="search_button"
+				onclick="StandardController?action=liststandards">
+		</div></a>
+
+
+</div>

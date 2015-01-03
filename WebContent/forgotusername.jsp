@@ -19,28 +19,27 @@
 </head>
 <body>
 
-<div id="top">
+	<div id="top"></div>
 
-            </div>
-
-            <!--  <div id="banner">
+	<!--  <div id="banner">
                     <img src="images/Banner.jpg" />
                 </div> -->
 
-            <div id="topnav">
+	<div id="topnav">
 
-                <ul>
-                    <li><a><img src="img/Banner.jpg" /></a></li>
-                </ul>
-            </div>
+		<ul>
+			<li><a><img src="img/Banner.jpg" /></a></li>
+		</ul>
+	</div>
 	<div class="span5">
 		<form method="POST" action='MemberpfController' name="frmGetUsername"
 			class="cbp-mc-form">
 
-			<% //String action = request.getParameter("action");
-                //System.out.println(action);
-                System.out.println(session.getAttribute("username"));
-            %>
+			<%
+				//String action = request.getParameter("action");
+				//System.out.println(action);
+				System.out.println(session.getAttribute("username"));
+			%>
 			<div class="cbp-mc-column">
 				<input type="text" name="email" class="login-input"
 					placeholder="Email Address" />

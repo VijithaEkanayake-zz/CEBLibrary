@@ -142,7 +142,7 @@ public class BookDao {
 	//TODO
 	public void deleteBook(String id){
 		try {
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM book where acc_no=?");
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM standards where ref_no=?");
             // Parameters start with 1
             preparedStatement.setString(1, id);
             preparedStatement.executeUpdate();

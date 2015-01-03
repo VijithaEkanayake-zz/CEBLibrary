@@ -61,6 +61,7 @@ $(function() {
          	<div class="leftside">
          		<ul class="form">
 		<li><a class="profile" href="BookController?action=insert"><i class="icon-user"></i>Add Book</a></li>
+		<li><a class="messages" href="StandardController?action=insert"><i class="icon-user"></i>Add Standard</a></li>
 		<li class=""><a class="messages" href="MemberController?action=insert"><i class="icon-envelope-alt"></i>Add Member</a></li>
 		<li><a class="settings" href="MemberController?action=listmember"><i class="icon-cog"></i>Show All Members</a></li>
 		<li><a class="logout" href="BookController?action=listbooks"><i class="icon-signout"></i>List of Books</a></li>

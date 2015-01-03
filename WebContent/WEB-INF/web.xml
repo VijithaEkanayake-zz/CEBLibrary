@@ -33,12 +33,28 @@
     <url-pattern>/SearchController</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>StandardSearchController</servlet-name>
+    <servlet-class>com.vijitha.controller.StandardSearchController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StandardSearchController</servlet-name>
+    <url-pattern>/StandardSearchController</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>BookController</servlet-name>
     <servlet-class>com.vijitha.controller.BookController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>BookController</servlet-name>
     <url-pattern>/BookController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>StandardController</servlet-name>
+    <servlet-class>com.vijitha.controller.StandardController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StandardController</servlet-name>
+    <url-pattern>/StandardController</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>BookIssueController</servlet-name>
@@ -63,6 +79,14 @@
   <servlet-mapping>
     <servlet-name>BookRequestController</servlet-name>
     <url-pattern>/BookRequestController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>CategoryController</servlet-name>
+    <servlet-class>com.vijitha.controller.CategoryController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CategoryController</servlet-name>
+    <url-pattern>/CategoryController</url-pattern>
   </servlet-mapping>
   <session-config>
     <session-timeout>30</session-timeout>
